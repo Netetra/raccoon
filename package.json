@@ -1,0 +1,28 @@
+{
+  "name": "white-raccoon",
+  "version": "1.0.0",
+  "description": "Discord-bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Netetra/white-raccoon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Netetra/white-raccoon/issues"
+  },
+  "homepage": "https://github.com/Netetra/white-raccoon#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "discord.js": "^13.6.0",
+    "inspector": "^0.5.0",
+    "process": "^0.11.10",
+    "request": "^2.88.2",
+    "yt-search": "^2.10.3"
+  }
+}

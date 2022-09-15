@@ -55,6 +55,7 @@ client.on("interactionCreate", async (interaction) => {
                 title: titlew,
                 color: 0xFFFFFF, 
                 description: descriptionw}]});
+                break;
         case "slot":
             let emoji = [":innocent: ",":poop: ",":face_with_symbols_over_mouth: ",":eyes: ",":monkey_face: ",":thinking: ",":radioactive: ",":computer: ",":cockroach: ",":face_vomiting: ",":thumbsdown: ",":nauseated_face: ",":sunglasses: ",":beer: ",":100: ",":pill: ",":gem: ",":fox: ",":hatching_chick: ",":strawberry: ",":squid: ",":chicken: ",":briefs: ",":smiling_imp: ",":avocado: ",":space_invader: ",":mechanical_arm: "];
             let n = (interaction.options.getNumber("n") * 2) + 1;
@@ -70,6 +71,7 @@ client.on("interactionCreate", async (interaction) => {
                 slot = slot + "\n";
             }
             await interaction.reply(slot);
+            break;
         case "yts":
             let url = yts( interaction.options.getString("string"), async function ( err, r ) {
                 let msg = "動画が見つかりませんでした";
@@ -80,6 +82,7 @@ client.on("interactionCreate", async (interaction) => {
                 }
                 await interaction.reply(msg);
             })
+            break;
         case "crypt":
             switch (interaction.options.getString("hash")) {
                 case "md5":
@@ -87,6 +90,7 @@ client.on("interactionCreate", async (interaction) => {
                 case "sha256":
                     await interaction.reply(sha256hex(interaction.options.getString("string")));
             }
+            break;
         case "rinvite":
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             let args = shuffle(chars);
@@ -95,6 +99,7 @@ client.on("interactionCreate", async (interaction) => {
                 result += args.charAt(Math.floor(Math.random() * 36));
             }
             await interaction.reply("discord.gg/"+result);
+            break;
         case "info":
             await interaction.reply({embeds: [{
                 title: "このbotについて",
@@ -120,6 +125,7 @@ client.on("interactionCreate", async (interaction) => {
                     }
                 ],
             }]});
+            break;
     }
 });
 

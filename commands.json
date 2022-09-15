@@ -1,74 +1,53 @@
 [
     {
-        "name":"ping",
-        "description":"ping値を返します"
-    },{
         "name":"embed",
-        "description":"Embedを送信",
         "options":[
             {
                 "type":"STRING",
                 "name":"title",
-                "description":"タイトル",
                 "required":true
             },{
                 "type":"STRING",
                 "name":"description",
-                "description":"内容",
                 "required":true
             }]
     },{
         "name":"slot",
-        "description":"スロットを回す",
         "options":[
             {
                 "type":"NUMBER",
                 "name":"n",
-                "description":"(2n+1)^2のスロットを回す",
-                "required":true
-            }]
-    },{
-        "name":"md5",
-        "description":"MD5による文字列の暗号化",
-        "options":[
-            {
-                "type":"STRING",
-                "name":"string",
-                "description":"文字列",
-                "required":true
-            }]
-    },{
-        "name":"sha256",
-        "description":"SHA256による文字列の暗号化"
-        ,"options":[
-            {
-                "type":"STRING",
-                "name":"string",
-                "description":"文字列",
                 "required":true
             }]
     },{
         "name":"yts",
-        "description":"youtubeで動画を検索",
+        "description":"search video",
         "options":[
             {
                 "type":"STRING",
                 "name":"string",
-                "description":"文字列",
                 "required":true
             }]
     },{
-        "name":"info",
-        "description":"このbotについて"
+        "name":"info"
     },{
-        "name":"sqrt",
-        "description":"√n",
+        "name":"rinvite"
+    },{
+        "name":"crypt",
         "options":[
             {
-                "type":"NUMBER",
-                "name":"n",
-                "description":"√n",
+                "type":"STRING",
+                "name":"hash",
+                "required":true,
+                "choices":[
+                    {"name":"md5","value":"md5"},
+                    {"name":"sha256","value":"sha256"}
+                ]
+            },{
+                "type":"STRING",
+                "name":"string",
                 "required":true
-        }]
+            }
+        ]
     }
 ]

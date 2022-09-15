@@ -18,6 +18,19 @@ function sha256hex(str) {
     return sha2.update(str, 'binary').digest('hex')
 }
 
+function shuffle(text) {
+	let obj = {};
+	for (let i = 0; i < text.length; i++) {
+		let rand = Math.floor(Math.random() * 10000000);
+		if (!obj[rand]) {
+			obj[rand] = text[i];
+		} else {
+			i--;
+		}
+	}
+	return Object.values(obj).join('');
+}
+
 ///コマンドの定義とスタートアップ
 client.once("ready", async () => {
     await client.application.commands.set(commands);
@@ -75,7 +88,8 @@ client.on("interactionCreate", async (interaction) => {
                     await interaction.reply(sha256hex(interaction.options.getString("string")));
             }
         case "rinvite":
-            const args = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            let args = shuffle(chars);
             let result = '';
             for (let i = 0; i < 8; i++){
                 result += args.charAt(Math.floor(Math.random() * 36));

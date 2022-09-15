@@ -6,19 +6,22 @@
             {
                 "type":"STRING",
                 "name":"title",
+                "description":"title",
                 "required":true
             },{
                 "type":"STRING",
                 "name":"description",
+                "description":"description",
                 "required":true
             }]
     },{
         "name":"slot",
-        "description":"",
+        "description":"(2n+1)^2マスのスロット",
         "options":[
             {
                 "type":"NUMBER",
                 "name":"n",
+                "description":"n",
                 "required":true
             }]
     },{
@@ -28,21 +31,23 @@
             {
                 "type":"STRING",
                 "name":"string",
+                "description":"keyword",
                 "required":true
             }]
     },{
         "name":"info",
-        "description":""
+        "description":"このbotについて"
     },{
         "name":"rinvite",
         "description":"random invite url generator"
     },{
         "name":"crypt",
-        "description":"",
+        "description":"string -> hash",
         "options":[
             {
                 "type":"STRING",
                 "name":"hash",
+                "description":"hash",
                 "required":true,
                 "choices":[
                     {"name":"md5","value":"md5"},
@@ -51,6 +56,7 @@
             },{
                 "type":"STRING",
                 "name":"string",
+                "description":"string",
                 "required":true
             }
         ]
